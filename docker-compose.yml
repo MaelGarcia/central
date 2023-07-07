@@ -27,7 +27,7 @@ services:
       POSTGRES_PASSWORD: odk
       POSTGRES_DATABASE: odk
     ports:
-      - "${DB_PORT:-1001}:1001"
+      - 5432:1001
   mail:
     image: "ixdotai/smtp:v0.2.0"
     volumes:

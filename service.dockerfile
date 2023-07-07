@@ -2,12 +2,12 @@ ARG node_version=16.20
 FROM node:${node_version} as intermediate
 
 COPY . .
-RUN mkdir /tmp/sentry-versions
-RUN git describe --tags --dirty > /tmp/sentry-versions/central
-WORKDIR server
-RUN git describe --tags --dirty > /tmp/sentry-versions/server
+#RUN mkdir /tmp/sentry-versions
+#RUN git describe --tags --dirty > /tmp/sentry-versions/central
+#WORKDIR server
+#RUN git describe --tags --dirty > /tmp/sentry-versions/server
 WORKDIR ../client
-RUN git describe --tags --dirty > /tmp/sentry-versions/client
+#RUN git describe --tags --dirty > /tmp/sentry-versions/client
 
 FROM node:${node_version}
 

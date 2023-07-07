@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: odk
       POSTGRES_DATABASE: odk
     ports:
-      - 5432:1001
+      - 1001:5432
     restart: always
   postgres:
     # This service upgrades from postgres 9.6 to 14.

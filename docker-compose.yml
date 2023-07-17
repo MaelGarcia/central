@@ -81,6 +81,7 @@ services:
       - service
       - enketo
     environment:
+      - ENV=${ENV}
       - DOMAIN=${DOMAIN}
       - CERTBOT_EMAIL=${SYSADMIN_EMAIL}
       - SSL_TYPE=${SSL_TYPE:-letsencrypt}

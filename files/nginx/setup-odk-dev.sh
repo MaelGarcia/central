@@ -4,11 +4,14 @@
 
 
     DH_PATH=/etc/dh/nginx.pem
+
+    SELFSIGN_PATH="/etc/selfsign/live/$DOMAIN"
     echo "writing fresh nginx templates..."
     cp /usr/share/odk/nginx/redirector.conf /etc/nginx/conf.d/redirector.conf
-    # remove letsencrypt challenge reply, but keep 80 to 443 redirection
-    perl -i -ne 'print if $. < 7 || $. > 14' /etc/nginx/conf.d/redirector.conf
-    echo "starting nginx for custom ssl and self-signed certs..."
+    if [ "$SSL_TYPE" = "letsencrypt" ]; then
+    echo "starting nginx for letsencrypt..."
+    /bin/bash /scripts/start_nginx_certbot.sh
+    fi
   
     exec nginx -g "daemon off;"
 

@@ -75,11 +75,11 @@ services:
       driver: local
   nginx:
     volumes:
-      - letsencrypt:/etc/letsencrypt/live/
+      - letsencrypt:/etc/letsencrypt/
     build:
       context: .
       dockerfile: nginx.dockerfile
-      target: dev
+      target: prod
     depends_on:
       - service
       - enketo

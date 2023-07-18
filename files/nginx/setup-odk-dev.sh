@@ -1,6 +1,9 @@
 #!/bin/bash
 
 DH_PATH=/etc/dh/nginx.pem
+if [ "$SSL_TYPE" != "upstream" ] && [ ! -s "$DH_PATH" ]; then
+  openssl dhparam -out "$DH_PATH" 2048
+fi
 
 SELFSIGN_PATH="/etc/selfsign/live/$DOMAIN"
 

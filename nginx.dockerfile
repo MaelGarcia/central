@@ -38,6 +38,7 @@ RUN apt-get update && apt-get install -y netcat-openbsd
 RUN mkdir -p /usr/share/odk/nginx/
 
 COPY files/nginx/setup-odk-dev.sh /scripts/
+COPY files/local/customssl/*.pem /etc/customssl/live/local/
 COPY files/nginx/*.conf* /usr/share/odk/nginx/
 
 COPY --from=intermediate client/dist/ /usr/share/nginx/html

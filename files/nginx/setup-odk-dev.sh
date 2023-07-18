@@ -15,11 +15,10 @@ nvsubst '$SSL_TYPE $CNAME $SENTRY_ORG_SUBDOMAIN $SENTRY_KEY $SENTRY_PROJECT' \
 > /etc/nginx/conf.d/odk.conf
 
 if [ "$SSL_TYPE" = "letsencrypt" ]; then
-echo "starting nginx for letsencrypt para desarrolladores..."
-echo "dev EdwinGarcia"
-/bin/bash /scripts/start_nginx_certbot.sh
+  echo "starting nginx for letsencrypt..."
+  /bin/bash /scripts/start_nginx_certbot.sh
+  exec nginx -g "daemon off;"
 fi
-exec nginx -g "daemon off;"
   
     
 

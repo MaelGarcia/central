@@ -5,7 +5,6 @@
 /docker-compose.override.yml
 /version.txt
 
-/files/allow-postgres14-upgrade
 /files/postgres14/upgrade/*
 !/files/postgres14/upgrade/check-available-space
 

@@ -79,7 +79,7 @@ services:
     build:
       context: .
       dockerfile: nginx.dockerfile
-      target: dev
+      target: prod
     depends_on:
       - service
       - enketo

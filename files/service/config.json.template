@@ -26,7 +26,7 @@
       "port": 80
     },
     "enketo": {
-      "url": "http://greatdevservice.ddns.net:8005/-",
+      "url": "http://enketo:8005/-",
       "apiKey": "${ENKETO_API_KEY}"
     },
     "env": {
